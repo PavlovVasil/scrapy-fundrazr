@@ -7,12 +7,11 @@ import re
 class FundrazrSpider(scrapy.Spider):
     name = 'fundrazr_crawler'
     start_urls = ['https://fundrazr.com/find?category=Health/']
-
     npages = 2
 
     # This mimics getting the pages using the next button. 
     for i in range(2, npages + 2 ):
-      start_urls.append("https://fundrazr.com/find?category=Health&page="+str(i)+"")
+      start_urls.append("https://fundrazr.com/find?category=Health&page=" + str(i) + "")
       
     def parse(self, response):
       for href in response.xpath("//h2[contains(@class, 'title headline-font')]/a[contains(@class, 'campaign-link')]//@href"):
@@ -50,4 +49,3 @@ class FundrazrSpider(scrapy.Spider):
       item['url'] = response.xpath("//meta[@property='og:url']/@content").extract()
 
       yield item
-
