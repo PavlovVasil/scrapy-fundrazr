@@ -14,3 +14,6 @@ To restore the environment do the following:
 4. Run ```conda env create -f environment.yml``` - this would restore the enviroment and dependencies
 5. Run ```conda activate scrapyEnv``` in order to activate the environment
 6. Run ```scrapy crawl fundrazr_crawler -o MonthDay_Year.csv``` - this would actually run the crawler and generate an .csv file containing the data scraped from Fundrazr, as shown in the tutorial
+
+## How to debug the scraper if you are using VS Code
+Either use the provided launch.json debug configuration, or run the runner.py in the VS Code debugger and it would launch the crawler. 
