@@ -1,0 +1,16 @@
+import os
+from scrapy.cmdline import execute
+
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+try:
+    execute(
+        [
+            'scrapy',
+            'crawl',
+            'fundrazr_crawler',
+            '-o',
+            'MonthDay_Year.csv',
+        ]
+    )
+except SystemExit:
+    pass
