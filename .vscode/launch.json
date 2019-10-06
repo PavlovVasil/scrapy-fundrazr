@@ -14,7 +14,7 @@
                 "crawl",
                 "fundrazr_crawler",
                 "-o",
-                "test.json"
+                "fundrazr.csv"
             ],
             // "program": "${file}",
             // "console": "integratedTerminal"
